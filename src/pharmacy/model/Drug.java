@@ -22,11 +22,12 @@ public class Drug {
     private String updated_at;
     private Category category_id;
     private Brand brand_id;
+    private Rack rack_id;
 
     public Drug() {
     }
 
-    public Drug(Integer drug_id, String drug_name, String drug_generic_name, String drug_minimum_stock, int drug_status, String created_at, String updated_at, Category category_id, Brand brand_id) {
+    public Drug(Integer drug_id, String drug_name, String drug_generic_name, String drug_minimum_stock, int drug_status, String created_at, String updated_at, Category category_id, Brand brand_id, Rack rack_id) {
         this.drug_id = drug_id;
         this.drug_name = drug_name;
         this.drug_generic_name = drug_generic_name;
@@ -36,6 +37,7 @@ public class Drug {
         this.updated_at = updated_at;
         this.category_id = category_id;
         this.brand_id = brand_id;
+        this.rack_id = rack_id;
     }
 
     /**
@@ -164,5 +166,18 @@ public class Drug {
         this.brand_id = brand_id;
     }
 
-   
+    /**
+     * @return the rack_id
+     */
+    public Rack getRack_id() {
+        return rack_id;
+    }
+
+    /**
+     * @param rack_id the rack_id to set
+     */
+    public void setRack_id(Rack rack_id) {
+        this.rack_id = rack_id;
+    }
+
 }

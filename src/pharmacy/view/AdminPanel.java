@@ -530,7 +530,7 @@ public class AdminPanel extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(184, 199, 206));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel27.setText("             Customer Management");
+        jLabel27.setText("             GRN Management");
         jLabel27.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel27MouseEntered(evt);
@@ -577,7 +577,7 @@ public class AdminPanel extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(184, 199, 206));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel30.setText("             General Summery");
+        jLabel30.setText("             Patient Management");
         jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel30MouseEntered(evt);
@@ -993,10 +993,10 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jPanel6.updateUI();
 
-        ViewCustomer sd = new ViewCustomer();
+        GRN sd = new GRN();
         sd.setVisible(true);
         jPanel6.add(sd);
-       // System.out.println("sdfsdfsd");
+        // System.out.println("sdfsdfsd");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jLabel27MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseEntered
@@ -1033,11 +1033,15 @@ public class AdminPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseExited
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        jPanel6.removeAll();
+        jPanel6.setLayout(new FlowLayout());
 
-//        GeneralSummery dialog = new GeneralSummery(new javax.swing.JFrame(), true);
-//        dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-//        });
-//        dialog.setVisible(true);
+        jPanel6.updateUI();
+
+        ViewCustomer sd = new ViewCustomer();
+        sd.setVisible(true);
+        jPanel6.add(sd);
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jLabel30MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseEntered

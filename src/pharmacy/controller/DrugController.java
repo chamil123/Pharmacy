@@ -18,6 +18,7 @@ import pharmacy.DB.DB;
 import pharmacy.model.Brand;
 import pharmacy.model.Category;
 import pharmacy.model.Drug;
+import pharmacy.model.Rack;
 
 /**
  *
@@ -26,10 +27,8 @@ import pharmacy.model.Drug;
 public class DrugController {
 
     public static int save(Drug d) {
-
-        String sql = "INSERT into drug (drug_name,drug_generic_name,drug_minimum_stock,drug_status,created_at,updated_at,cat_id,user_id,brand_id) Values(?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT into drug (drug_name,drug_generic_name,drug_minimum_stock,drug_status,created_at,updated_at,cat_id,user_id,brand_id,rack_id) Values(?,?,?,?,?,?,?,?,?,?)";
         try {
-
             Connection con = DB.getCon();
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, d.getDrug_name());
@@ -41,14 +40,12 @@ public class DrugController {
             ps.setInt(7, d.getCategory_id().getCat_id());
             ps.setInt(8, 1);
             ps.setInt(9, d.getBrand_id().getBrand_id());
+            ps.setInt(10, d.getRack_id().getRack_id());
             ps.executeUpdate();
-
-            System.out.println("dasasd : " + d.getDrug_name());
             return 1;
         } catch (Exception e) {
             return 0;
         }
-
     }
 
     public static List<Drug> list() {
@@ -64,7 +61,7 @@ public class DrugController {
 
                 Brand brand = BrandController.getBrandById(rs.getInt("brand_id"));
                 Category category = CategoryController.getCatById(rs.getInt("cat_id"));
-                 c = new Drug();
+                c = new Drug();
                 c.setDrug_id(rs.getInt("drug_id"));
                 c.setDrug_name(rs.getString("drug_name"));
                 c.setDrug_generic_name(rs.getString("drug_generic_name"));
@@ -112,11 +109,13 @@ public class DrugController {
 
         Brand brand;
         Category category;
+        Rack rack;
         List<Drug> list = new ArrayList();
         while (rst.next()) {
             brand = BrandController.getBrandById(rst.getInt("brand_id"));
             category = CategoryController.getCatById(rst.getInt("cat_id"));
-            list.add(new Drug(rst.getInt("drug_id"), rst.getString("drug_name"), rst.getString("drug_generic_name"), rst.getString("drug_minimum_stock"), rst.getInt("drug_status"), rst.getString("created_at"), rst.getString("updated_at"), category, brand));
+            rack = RackController.getRackById(rst.getInt("cat_id"));
+            list.add(new Drug(rst.getInt("drug_id"), rst.getString("drug_name"), rst.getString("drug_generic_name"), rst.getString("drug_minimum_stock"), rst.getInt("drug_status"), rst.getString("created_at"), rst.getString("updated_at"), category, brand, rack));
         }
 
         rst = null;
@@ -133,11 +132,13 @@ public class DrugController {
         Drug drug = null;
         Brand brand;
         Category category;
+        Rack rack;
         if (rst.next()) {
             brand = BrandController.getBrandById(rst.getInt("brand_id"));
             category = CategoryController.getCatById(rst.getInt("cat_id"));
-            drug = new Drug(rst.getInt("drug_id"), rst.getString("drug_name"), rst.getString("drug_generic_name"), rst.getString("drug_minimum_stock"), rst.getInt("drug_status"), rst.getString("created_at"), rst.getString("updated_at"), category, brand);
-        
+            rack = RackController.getRackById(rst.getInt("cat_id"));
+            drug = new Drug(rst.getInt("drug_id"), rst.getString("drug_name"), rst.getString("drug_generic_name"), rst.getString("drug_minimum_stock"), rst.getInt("drug_status"), rst.getString("created_at"), rst.getString("updated_at"), category, brand, rack);
+
         }
 //        Runtime.getRuntime().runFinalization();
 //        Runtime.getRuntime().gc();

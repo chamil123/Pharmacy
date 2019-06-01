@@ -32,10 +32,10 @@ public class BatchController {
             ps.setInt(1, drug_id);
             ResultSet rs = ps.executeQuery();
             Drug drug;
-            Rack rack;
+//            Rack rack;
             if (rs.next()) {
                 drug = DrugController.searchByDrugId("" + rs.getInt("drug_id"));
-                rack = RackController.getRackById(rs.getInt("rack_id"));
+//                rack = RackController.getRackById(rs.getInt("rack_id"));
                 b = new Batch();
                 b.setBatch_id(rs.getInt("batch_id"));
                 b.setBatch_no(rs.getString("batch_no"));
@@ -46,7 +46,7 @@ public class BatchController {
                 b.setCreated_at(rs.getString("created_at"));
                 b.setUpdated_at(rs.getString("updated_at"));
                 b.setDrug_id(drug);
-                b.setRack_id(rack);
+//                b.setRack_id(rack);
 
             }
 
@@ -68,10 +68,10 @@ public class BatchController {
             ResultSet rs = ps.executeQuery();
 
             Drug drug;
-            Rack rack;
+//            Rack rack;
             while (rs.next()) {
                 drug = DrugController.searchByDrugId("" + rs.getInt("drug_id"));
-                rack = RackController.getRackById(rs.getInt("rack_id"));
+//                rack = RackController.getRackById(rs.getInt("rack_id"));
                 b = new Batch();
                 b.setBatch_id(rs.getInt("batch_id"));
                 b.setBatch_no(rs.getString("batch_no"));
@@ -82,7 +82,7 @@ public class BatchController {
                 b.setCreated_at(rs.getString("created_at"));
                 b.setUpdated_at(rs.getString("updated_at"));
                 b.setDrug_id(drug);
-                b.setRack_id(rack);
+//                b.setRack_id(rack);
                 list.add(b);
             }
 

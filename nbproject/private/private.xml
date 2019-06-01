@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/UpdateCustomer.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/controller/DrugController.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/UpdateSupplier.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/controller/CustomerController.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/model/Customer.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/AddCustomer.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/AdminPanel.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/ViewCustomer.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/ViewSupplier.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/Invoice.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/controller/SupplierController.java</file>
-            <file>file:/C:/Users/chami/OneDrive/Documents/NetBeansProjects/Pharmacy/src/pharmacy/view/AddSupplier.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
